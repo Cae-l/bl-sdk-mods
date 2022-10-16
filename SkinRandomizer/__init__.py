@@ -27,7 +27,7 @@ class skinRando(SDKMod):
                         "<font size='12'>[Quick Change, New Characters creation, and Catch-a-Ride]</font>\n"\
                         "<font size='12'>2.Turn on/off character customization eligibility</font>\n"
                         "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n"\
-                        "<font size='14' color='#d4002a'>Vehicle skin randomization can be / is buggy and only works on the primary vehicle.</font>")
+                        "<font size='14' color='#d4002a'>Vehicle skin randomization only works on the primary vehicle.</font>")
  
     Options: List[ModMenu.Options.Base] = [
         allSkins
