@@ -23,11 +23,11 @@ class skinRando(SDKMod):
     Author = "Cael"
     Description: str = ("<strong><u><font size='18' color='#8a0087'>Skin Randomizer</font></u></strong>\n"\
                         "<font size='16'>Features:</font>\n"\
-                        "<font size='12'>1.Press F2 to randomize any customization</font>\n"
-                        "<font size='12'>[Quick Change, New characters, and vehicles]</font>\n"\
+                        "<font size='12'>1.Press F2 to randomize any customization in UI</font>\n"
+                        "<font size='12'>[Quick Change, New Characters creation, and Catch-a-Ride]</font>\n"\
                         "<font size='12'>2.Turn on/off character customization eligibility</font>\n"
                         "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n"\
-                        "<font size='14' color='#d4002a'>Vehicle skin randomization can be / is buggy.</font>")
+                        "<font size='14' color='#d4002a'>Vehicle skin randomization can be / is buggy and only works on the primary vehicle.</font>")
  
     Options: List[ModMenu.Options.Base] = [
         allSkins
@@ -115,14 +115,15 @@ class skinRando(SDKMod):
         return True
 
     @Hook("WillowGame.VehicleSpawnStationGFxMovie.HandleKeyDefaults")
-    def HadnleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
+    def HandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == "F2" and params.uevent == 1:
             _skins: List[UObject] = (caller.AvailableVehicleSkinDefinitions)
             choiceSkin: UObject = random.choice(_skins)
+            caller.UpdatePreview(choiceSkin)
             caller.VehicleChoiceModule[0].EquippedVehicleCustomizationDefinition = choiceSkin
             caller.VehicleChoiceModule[0].PreviewVehicleCustomizationDefinition = choiceSkin
-            caller.UpdatePreview(choiceSkin)
             caller.CommitCustomization()
+            
         return True
 
 unrealsdk.RegisterMod(skinRando())
