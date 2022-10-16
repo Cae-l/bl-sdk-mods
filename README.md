@@ -3,5 +3,11 @@ An [UnrealEngine PythonSDK](https://github.com/bl-sdk/PythonSDK) mod for Borderl
 *Add an option to remove customization elegibility (Allows Maya to use Zer0 heads/skins, etc)
 *Press F2 to randomize the customization in the Quick Change, New Character, and Vehicle spawn menus
 
-##Installations
+## Installations
 
+Begin by [downloading 'SkinRandomizer.zip' here](https://github.com/Cae-l/SkinRandomizer/archive/refs/tags/1.0.zip).
+
+1.
+2.
+3.
+4.
