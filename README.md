@@ -5,11 +5,11 @@ An [UnrealEngine PythonSDK](https://github.com/bl-sdk/PythonSDK) mod for Borderl
 
 ## Installations
 
-Begin by [downloading `SkinRandomizer-main.zip` here](https://github.com/Cae-l/SkinRandomizer/archive/refs/heads/master.zip).
+Begin by [downloading `SkinRandomizer-master.zip` here](https://github.com/Cae-l/SkinRandomizer/archive/refs/heads/master.zip).
 
 1. [Install/update UnrealEngine PythonSDK](https://bl-sdk.github.io/) if you have not already. *Note that your Mode Menu must be version 2.5 or later* (check MODS > General from the main menu)
 2. Locate the SDK's `Mods` folder (located `BL2 instalation` > `Binaries` > `Win32`)
-3. Copy the `SkinRandomizer` folder from `SkinRandomizer-main.zip` to `Mods` 
+3. Copy the `SkinRandomizer` folder from `SkinRandomizer-master.zip` to `Mods` 
 4. Launch the game, select the "MODS" option from the main menu, then select "Skin Randomzer" to enable it
 
 
