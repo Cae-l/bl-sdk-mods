@@ -6,9 +6,6 @@ from unrealsdk import *
 from Mods import ModMenu
 from ..ModMenu import EnabledSaveType, Hook, SDKMod
 
-def _randomizeSkin(_num: int) -> int:
-    itemnum = random.randrange(0,_num)
-    return itemnum
 
 allSkins = ModMenu.Options.Spinner(
     Caption="Use All Skins",
@@ -37,7 +34,6 @@ class skinRando(SDKMod):
 
     def Enable(self) -> None:
         super().Enable()
-        unrealsdk.KeepAlive(unrealsdk.FindObject("CustomizationGFxDefinition", "UI_Customization.Customization_Definition"))
         if allSkins.CurrentValue == "All Skins":
             self.enableAllSkins()
 
@@ -84,13 +80,13 @@ class skinRando(SDKMod):
     @Hook("WillowGame.CustomizationGFxMovie.MainInputKey")
     def MainInputKey(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == "F2" and params.uevent == 1:
-            _heads: List[UObject] = (caller.HeadCustomizations)
+            _heads: List[UObject] = list(caller.HeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
             caller.EquippedHeadCustomization = choiceHead
             caller.UpdateHeadPreview(choiceHead)
             caller.CommitHeadCustomization(choiceHead)
 
-            _skins: List[UObject] = (caller.SkinCustomizations)
+            _skins: List[UObject] = list(caller.SkinCustomizations)
             choiceSkin: UObject = random.choice(_skins)
             caller.EquippedSkinCustomization = choiceSkin
             caller.UpdateSkinPreview(choiceSkin)
@@ -101,13 +97,13 @@ class skinRando(SDKMod):
     @Hook("WillowGame.CharacterSelectionReduxGFxMovie.HandleCustomizeCharacterInput")
     def HandleCustomizeCharacterInput(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.Key =="F2" and params.Event == 1:
-            _heads: List[UObject] = (caller.PrimaryPlayerHeadCustomizations)
+            _heads: List[UObject] = list(caller.PrimaryPlayerHeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
             caller.EquippedHeadCustomization[0] = choiceHead
             caller.UpdateHeadPreview(0, choiceHead)
             caller.CommitHeadCustomization(0)
 
-            _skins: List[UObject] = (caller.PrimaryPlayerSkinCustomizations)
+            _skins: List[UObject] = list(caller.PrimaryPlayerSkinCustomizations)
             choiceSkin: UObject = random.choice(_skins)
             caller.EquippedSkinCustomization[0] = choiceSkin
             caller.UpdateSkinPreview(0, choiceSkin)
@@ -117,7 +113,7 @@ class skinRando(SDKMod):
     @Hook("WillowGame.VehicleSpawnStationGFxMovie.HandleKeyDefaults")
     def HandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == "F2" and params.uevent == 1:
-            _skins: List[UObject] = (caller.AvailableVehicleSkinDefinitions)
+            _skins: List[UObject] = list(caller.AvailableVehicleSkinDefinitions)
             choiceSkin: UObject = random.choice(_skins)
             caller.UpdatePreview(choiceSkin)
             caller.VehicleChoiceModule[0].EquippedVehicleCustomizationDefinition = choiceSkin
