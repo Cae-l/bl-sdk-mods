@@ -16,7 +16,7 @@ allSkins = ModMenu.Options.Spinner(
 
 class skinRando(SDKMod):
     Name = "Skin Randomizer"
-    Version = "1.0"
+    Version = "1.3"
     Author = "Cael"
     Description: str = ("<strong><u><font size='18' color='#8a0087'>Skin Randomizer</font></u></strong>\n"\
                         "<font size='16'>Features:</font>\n"\
@@ -86,6 +86,7 @@ class skinRando(SDKMod):
             caller.UpdateHeadPreview(choiceHead)
             caller.CommitHeadCustomization(choiceHead)
 
+
             _skins: List[UObject] = list(caller.SkinCustomizations)
             choiceSkin: UObject = random.choice(_skins)
             caller.EquippedSkinCustomization = choiceSkin
@@ -113,13 +114,22 @@ class skinRando(SDKMod):
     @Hook("WillowGame.VehicleSpawnStationGFxMovie.HandleKeyDefaults")
     def HandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == "F2" and params.uevent == 1:
+            caller.SelectedModuleIndex = 0
             _skins: List[UObject] = list(caller.AvailableVehicleSkinDefinitions)
             choiceSkin: UObject = random.choice(_skins)
             caller.UpdatePreview(choiceSkin)
             caller.VehicleChoiceModule[0].EquippedVehicleCustomizationDefinition = choiceSkin
             caller.VehicleChoiceModule[0].PreviewVehicleCustomizationDefinition = choiceSkin
             caller.CommitCustomization()
-            
+
+            caller.SelectedModuleIndex = 1
+            _skins: List[UObject] = list(caller.AvailableVehicleSkinDefinitions)
+            choiceSkin: UObject = random.choice(_skins)
+            caller.UpdatePreview(choiceSkin)
+            caller.VehicleChoiceModule[1].EquippedVehicleCustomizationDefinition = choiceSkin
+            caller.VehicleChoiceModule[1].PreviewVehicleCustomizationDefinition = choiceSkin
+            caller.CommitCustomization()
+            caller.CancelCustomization()
         return True
 
 unrealsdk.RegisterMod(skinRando())
