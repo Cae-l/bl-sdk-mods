@@ -21,7 +21,7 @@ Skin Randomizer operates using the `F2` key during certain interactive menus.
 |-----------------------|-------------------------------------------------------------------------------------------------------------|
 | Quick change station  | Selects random head & skin from the available pool                                                          |
 | Character creation    | Selects random head & skin from the available pool                                                          |
-| Catch-a-ride          | Selects a random vehicle skin form the available pool (Preview does not update and not all skins are valid) |
+| Catch-a-ride          | Selects a random vehicle skin form the available pool                                                       |
 
 
 Skin Ransomer has an option that can be configured in game "OPTIONS" > "MODS":
