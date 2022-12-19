@@ -59,7 +59,7 @@ class skinRando(SDKMod):
 
     def disableAllSkins(self) -> None:
         PC = unrealsdk.GetEngine().GamePlayers[0].Actor
-        PC.ConsoleCommand("set GD_Soldier.Character.CharClass_Soldier (Class'WillowGame.CustomizationUsage_Soldier')")
+        PC.ConsoleCommand("set GD_Soldier.Character.CharClass_Soldier EligibleUsage (Class'WillowGame.CustomizationUsage_Soldier')")
         PC.ConsoleCommand("set GD_Assassin.Character.CharClass_Assassin EligibleUsage (Class'WillowGame.CustomizationUsage_Assassin')")
         PC.ConsoleCommand("set GD_Siren.Character.CharClass_Siren EligibleUsage (Class'WillowGame.CustomizationUsage_Siren')")
         PC.ConsoleCommand("set GD_Mercenary.Character.CharClass_Mercenary EligibleUsage (Class'WillowGame.CustomizationUsage_Mercenary')")
