@@ -79,7 +79,6 @@ class skinRando(SDKMod):
 
     def enableAllSkins(self) -> None:
         PC = unrealsdk.GetEngine().GamePlayers[0].Actor
-
         for char in charList:
             char.EligibleUsage = [None]
 
