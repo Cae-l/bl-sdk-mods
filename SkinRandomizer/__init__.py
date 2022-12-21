@@ -16,7 +16,7 @@ allSkins = ModMenu.Options.Spinner(
 
 class skinRando(SDKMod):
     Name = "Skin Randomizer"
-    Version = "1.4"
+    Version = "1.5"
     Author = "Cael"
     Description: str = ("<strong><u><font size='18' color='#8a0087'>Skin Randomizer</font></u></strong>\n"\
                         "<font size='16'>Features:</font>\n"\
