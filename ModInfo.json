@@ -1,0 +1,27 @@
+{
+  "defaults": {
+    "authors": "Cael",
+    "source": "https://github.com/Cae-l/bl-sdk-mods",
+    "supports": ["BL2"],
+  },
+  "mods": [
+    {
+      "name": "Skin Randomizer",
+      "description": ["Features: \n",
+        "-Press F2 to select a random customization combination \n",
+        "---This selects a random head/skin for characters and random skin for both vehicles\n",
+        "-Adds an option to unlock customization eligibility\n",
+        "---This allows maya heads to be used on zer0, vehicle skins can be character skins, etc."
+      ],
+      "tagline": "Press a button to randomly select a customization.",
+      "types": ["Gameplay"],
+      "latest": "1.0",
+      "versions": {
+        "1.0": "https://github.com/Cae-l/bl-sdk-mods/raw/master/SkinRandomizer/SkinRandomizer.zip"
+      },
+      "requirements": {
+        "Mod Menu": "(>=)[2.5]"
+      }
+    }
+  ]
+}
