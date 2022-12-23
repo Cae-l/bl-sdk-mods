@@ -2,7 +2,7 @@
   "defaults": {
     "authors": "Cael",
     "source": "https://github.com/Cae-l/bl-sdk-mods",
-    "supports": ["BL2"],
+    "supports": ["BL2"]
   },
   "mods": [
     {
