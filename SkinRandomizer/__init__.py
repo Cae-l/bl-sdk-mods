@@ -16,11 +16,11 @@ allSkins = ModMenu.Options.Spinner(
 
 class skinRando(SDKMod):
     Name = "Skin Randomizer"
-    Version = "1.0"
+    Version = "1.1"
     Author = "Cael"
     Description: str = ("<strong><u><font size='18' color='#8a0087'>Skin Randomizer</font></u></strong>\n"\
                         "<font size='16'>Features:</font>\n"\
-                        "<font size='12'>1.Press F2 to randomize any customization in UI</font>\n"
+                        "<font size='12'>1.Press a button to randomize any customization in UI</font>\n"
                         "<font size='12'>[Quick Change, New Characters creation, and Catch-a-Ride]</font>\n"\
                         "<font size='12'>2.Turn on/off character customization eligibility</font>\n"
                         "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n")
