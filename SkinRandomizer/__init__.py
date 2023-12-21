@@ -26,7 +26,15 @@ class skinRando(SDKMod):
                         "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n")
  
     Options: List[ModMenu.Options.Base] = [allSkins]
+    
+
     SaveEnabledState = EnabledSaveType.LoadOnMainMenu
+    
+    keyRando = ModMenu.Keybind( "Randomize", "F2")
+
+    Keybinds: List[ModMenu.Keybind] = [
+        keyRando,
+    ]
     def Enable(self) -> None:
         super().Enable()
         global charList
@@ -89,7 +97,7 @@ class skinRando(SDKMod):
 
     @Hook("WillowGame.CustomizationGFxMovie.MainInputKey")
     def MainInputKey(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
-        if params.ukey == "F2" and params.uevent == 1:
+        if params.ukey == skinRando.keyRando.Key and params.uevent == 1:
             _heads: List[UObject] = list(caller.HeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
             caller.EquippedHeadCustomization = choiceHead
@@ -106,7 +114,7 @@ class skinRando(SDKMod):
 
     @Hook("WillowGame.CharacterSelectionReduxGFxMovie.HandleCustomizeCharacterInput")
     def HandleCustomizeCharacterInput(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
-        if params.Key =="F2" and params.Event == 1:
+        if params.Key == skinRando.keyRando.Key and params.Event == 1:
             _heads: List[UObject] = list(caller.PrimaryPlayerHeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
             caller.EquippedHeadCustomization[0] = choiceHead
@@ -122,7 +130,7 @@ class skinRando(SDKMod):
 
     @Hook("WillowGame.VehicleSpawnStationGFxMovie.HandleKeyDefaults")
     def HandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
-        if params.ukey == "F2" and params.uevent == 1:
+        if params.ukey == skinRando.keyRando.Key and params.uevent == 1:
             caller.SelectedModuleIndex = 0
             _skins: List[UObject] = list(caller.AvailableVehicleSkinDefinitions)
             choiceSkin: UObject = random.choice(_skins)
