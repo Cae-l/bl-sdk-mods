@@ -11,13 +11,15 @@
         "-Press a button to select a random customization combination \n",
         "---This selects a random head/skin for characters and random skin for both vehicles\n",
         "-Adds an option to unlock customization eligibility\n",
-        "---This allows maya heads to be used on zer0, vehicle skins can be character skins, etc."
+        "---This allows maya heads to be used on zer0, vehicle skins can be character skins, etc.",
+        "ver 1.1: added in the function to allow the ranomize key to be rebound",
+        "ver 1.2: renamed hooked function for compatibility"
       ],
       "tagline": "Press a button to randomly select a customization.",
       "types": ["Gameplay"],
-      "latest": "1.1",
+      "latest": "1.2",
       "versions": {
-        "1.1": "https://github.com/Cae-l/bl-sdk-mods/raw/master/SkinRandomizer/SkinRandomizer.zip"
+        "1.2": "https://github.com/Cae-l/bl-sdk-mods/raw/master/SkinRandomizer/SkinRandomizer.zip"
       }
     }
   ]
