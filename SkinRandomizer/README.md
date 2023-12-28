@@ -1,7 +1,7 @@
 # SkinRandomizer
 An [UnrealEngine PythonSDK](https://github.com/bl-sdk/PythonSDK) mod for Borderlands 2 that does the following:
 * Add an option to remove customization elegibility (Allows Maya to use Zer0 heads/skins, etc) *This does not unlock all customization*
-* Press F2 to randomize the customization in the Quick Change, New Character, and Vehicle spawn menus *Some customizations do not work on vehicles*
+* Press a (bindable key)`default F2` to randomize the customization in the Quick Change, New Character, and Vehicle spawn menus *Some customizations do not work on vehicles*
 
 
 ## Installations
@@ -16,7 +16,7 @@ Begin by [downloading `SkinRandomizer.zip` here](https://github.com/Cae-l/bl-sdk
 
 ## Usage
 
-Skin Randomizer operates using the `F2` key during certain interactive menus.
+Skin Randomizer operates using (bindable key)`F2` during certain interactive menus.
 | Menu                  | Description                                                                                                 |
 |-----------------------|-------------------------------------------------------------------------------------------------------------|
 | Quick change station  | Selects random head & skin from the available pool                                                          |
