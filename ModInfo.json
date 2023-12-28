@@ -11,8 +11,8 @@
         "-Press a button to select a random customization combination \n",
         "---This selects a random head/skin for characters and random skin for both vehicles\n",
         "-Adds an option to unlock customization eligibility\n",
-        "---This allows maya heads to be used on zer0, vehicle skins can be character skins, etc.",
-        "ver 1.1: added in the function to allow the ranomize key to be rebound",
+        "---This allows maya heads to be used on zer0, vehicle skins can be character skins, etc.\n",
+        "ver 1.1: added in the function to allow the ranomize key to be rebound\n",
         "ver 1.2: renamed hooked function for compatibility"
       ],
       "tagline": "Press a button to randomly select a customization.",
