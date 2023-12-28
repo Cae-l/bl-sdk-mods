@@ -16,14 +16,14 @@ allSkins = ModMenu.Options.Spinner(
 
 class skinRando(SDKMod):
     Name = "Skin Randomizer"
-    Version = "1.1"
+    Version = "1.2"
     Author = "Cael"
     Description: str = ("<strong><u><font size='18' color='#8a0087'>Skin Randomizer</font></u></strong>\n"\
                         "<font size='16'>Features:</font>\n"\
                         "<font size='12'>1.Press a button to randomize any customization in UI</font>\n"
                         "<font size='12'>[Quick Change, New Characters creation, and Catch-a-Ride]</font>\n"\
                         "<font size='12'>2.Turn on/off character customization eligibility</font>\n"
-                        "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n")
+                        "<font size='12'>[Allows Maya heads/skins on Zer0, etc]</font>\n"\)
  
     Options: List[ModMenu.Options.Base] = [allSkins]
     
@@ -96,7 +96,7 @@ class skinRando(SDKMod):
             char.EligibleUsage = [value]
 
     @Hook("WillowGame.CustomizationGFxMovie.MainInputKey")
-    def MainInputKey(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
+    def skinRandoMainInputKey(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == skinRando.keyRando.Key and params.uevent == 1:
             _heads: List[UObject] = list(caller.HeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
@@ -113,7 +113,7 @@ class skinRando(SDKMod):
         return True
 
     @Hook("WillowGame.CharacterSelectionReduxGFxMovie.HandleCustomizeCharacterInput")
-    def HandleCustomizeCharacterInput(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
+    def skinRandoHandleCustomizeCharacterInput(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.Key == skinRando.keyRando.Key and params.Event == 1:
             _heads: List[UObject] = list(caller.PrimaryPlayerHeadCustomizations)
             choiceHead: UObject = random.choice(_heads)
@@ -129,7 +129,7 @@ class skinRando(SDKMod):
         return True
 
     @Hook("WillowGame.VehicleSpawnStationGFxMovie.HandleKeyDefaults")
-    def HandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
+    def skinRandoHandleKeyDefaults(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct) -> bool:
         if params.ukey == skinRando.keyRando.Key and params.uevent == 1:
             caller.SelectedModuleIndex = 0
             _skins: List[UObject] = list(caller.AvailableVehicleSkinDefinitions)
